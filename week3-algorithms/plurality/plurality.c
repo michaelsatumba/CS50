@@ -95,17 +95,19 @@ void print_winner(void)
         if(candidates[i].votes > largest) {
             largest = candidates[i].votes;
             // "largest" is now whatever the largest number compared to all the candidate's vote total.
+            // If you print out the candidate's name here. You will just print out one name because the for loop just loops through each candidate once.
+            //  printf("%s\n", candidates[i].name);
         }
 
     }
 
     // Loops through candidate_count again
-    for (int i = 0; i < candidate_count; i++)
-    {
-        // If the candidate's vote total is equal to "largest". And largest is a number. Print out the name(s).
-        if(candidates[i].votes == largest) {
-            printf("%s\n", candidates[i].name);
-        }
-    }
+    // for (int i = 0; i < candidate_count; i++)
+    // {
+    //     // If the candidate's vote total is equal to "largest". And largest is a number. Print out the name(s).
+    //     if(candidates[i].votes == largest) {
+    //         printf("%s\n", candidates[i].name);
+    //     }
+    // }
     return;
 }
