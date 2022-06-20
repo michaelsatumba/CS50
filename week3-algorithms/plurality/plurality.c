@@ -85,49 +85,27 @@ void print_winner(void)
 {
     // TODO
     int largest = 0;
-
-
-
     // Loops through candidate_count
-    for (int i = 0; i < candidate_count; i++){
+    for (int i = 0; i < candidate_count; i++)
+    {
+        // Prints out each candidate's vote total
         // printf("%i\n", candidates[i].votes);
 
-        // If candidates[i].votes is larger than 0, make the variable "largest" equal that specific candidates votes.
+        // If each candidate's vote total is larger than 0, make the variable "largest" equal that specific candidate's vote total.
         if(candidates[i].votes > largest) {
             largest = candidates[i].votes;
-            // printf("%i\n", largest);
-            // printf("%s\n", candidates[i].name);
-            // If candidates votes is equal to the largest print out the candidates names.
-        //       if(candidates[i].votes == largest){
-        //     printf("%s\n", candidates[i].name);
-        // }
+            // "largest" is now whatever the largest number compared to all the candidate's vote total.
         }
-        printf("%i\n", largest);
 
+    }
 
-
-
-        // if (candidates[0].votes < candidates[i + 1].votes){
-        //     printf("%s wins\n", candidates[i + 1].name);
-        // } else if (candidates[0].votes == candidates[i + 1].votes) {
-        //     printf("tie\n");
-        // } else {
-        //     printf("%s wins\n", candidates[0].name);
-        // }
-   }
-//    printf("%i\n", largest);
-
-
-
-    // printf("%i", candidates[0].votes);
-    // printf("%i", candidates[1].votes);
-
-    // printf("%s", candidates[0].name);
-
-    // if (candidates[0].votes > candidates[1].votes) {
-    //     printf("%s", candidates[0].name);
-    // } else {
-    //      printf("%s", candidates[1].name);
-    // }
+    // Loops through candidate_count again
+    for (int i = 0; i < candidate_count; i++)
+    {
+        // If the candidate's vote total is equal to "largest". And largest is a number. Print out the name(s).
+        if(candidates[i].votes == largest) {
+            printf("%s\n", candidates[i].name);
+        }
+    }
     return;
 }
