@@ -67,7 +67,7 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     // TODO
-
+    // Loops through the candidate_count and if candidate name matches the vote canditate name inputted by user add 1 vote to that candidate.
      for (int i = 0; i < candidate_count; i++)
     {
          if (strcmp(name, candidates[i].name) == 0){
@@ -84,19 +84,41 @@ bool vote(string name)
 void print_winner(void)
 {
     // TODO
+    int largest = 0;
 
-      for (int i = 0; i < candidate_count - 1; i++)
-    {
-        // printf("%i", candidates[i].votes);
-        // printf("%i", candidates[0].votes);
-        if (candidates[0].votes < candidates[i + 1].votes){
-            printf("%s wins", candidates[i + 1].name);
-        } else if (candidates[0].votes == candidates[i + 1].votes) {
-            printf("tie");
-        } else {
-            printf("%s wins", candidates[0].name);
+
+
+    // Loops through candidate_count
+    for (int i = 0; i < candidate_count; i++){
+        // printf("%i\n", candidates[i].votes);
+
+        // If candidates[i].votes is larger than 0, make the variable "largest" equal that specific candidates votes.
+        if(candidates[i].votes > largest) {
+            largest = candidates[i].votes;
+            // printf("%i\n", largest);
+            // printf("%s\n", candidates[i].name);
+            // If candidates votes is equal to the largest print out the candidates names.
+        //       if(candidates[i].votes == largest){
+        //     printf("%s\n", candidates[i].name);
+        // }
         }
+        printf("%i\n", largest);
+
+
+
+
+        // if (candidates[0].votes < candidates[i + 1].votes){
+        //     printf("%s wins\n", candidates[i + 1].name);
+        // } else if (candidates[0].votes == candidates[i + 1].votes) {
+        //     printf("tie\n");
+        // } else {
+        //     printf("%s wins\n", candidates[0].name);
+        // }
    }
+//    printf("%i\n", largest);
+
+
+
     // printf("%i", candidates[0].votes);
     // printf("%i", candidates[1].votes);
 
@@ -107,7 +129,5 @@ void print_winner(void)
     // } else {
     //      printf("%s", candidates[1].name);
     // }
-
-    printf("\n");
     return;
 }
